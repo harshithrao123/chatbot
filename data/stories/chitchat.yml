@@ -1,0 +1,282 @@
+version: "2.0"
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: affirm
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: affirm
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: affirm
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.placed
+  - intent: react_positive
+  - action: utter_happy
+  - action: utter_goodbye
+- story: happy path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: affirm
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.placed
+  - intent: react_positive
+  - action: utter_happy
+  - action: utter_goodbye
+- story: happy path 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: happy path 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+
+- story: chitchat path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: affirm
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: chitchat path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: affirm
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: affirm
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.placed
+  - intent: react_positive
+  - action: utter_happy
+  - action: utter_goodbye
+- story: chitchat path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.placed
+  - action: utter_order.anything_else
+  - intent: affirm
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.placed
+  - intent: react_positive
+  - action: utter_happy
+  - action: utter_goodbye
+- story: chitchat path 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: chitchat path5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask.cuisine
+  - intent: cuisine.type
+  - action: action_Cusine
+  - intent: food_item_selection
+  - action: utter_display
+  - action: utter_item.quantity.how_many
+  - intent: item.quantity
+  - action: utter_order.confirm
+  - intent: deny
+  - action: utter_order.anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_agent.welcome
+- story: deny chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_agent.welcome
+  - intent: deny
+  - action: utter_nohelp
+- story: more chitchat
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: chitchat
+  - action: utter_chitchat
+- story: greet chitchat
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: chitchat
+  - action: utter_chitchat
+
+- story: sadpath1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: react_negative
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_full_cheer_up
+- story: sadpath2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_agent.welcome
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: react_negative
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_great

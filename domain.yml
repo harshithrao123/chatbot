@@ -1,0 +1,346 @@
+version: "2.0"
+session_config:
+  session_expiration_time: 480  # value in minutes, 0 means infinitely long
+  carry_over_slots_to_new_session: true  # set to false to forget slots between sessions
+intents:
+- affirm
+- bye
+- canthelp
+- food_item
+- mood_unhappy
+- mood_great
+- item.quantity
+- what_happened
+- chitchat:
+    use_entities: []
+- deny
+- enter_data
+- greet
+- human_handoff
+- out_of_scope
+- react_negative
+- react_positive
+- restart
+- thank
+- cuisine.type
+- food_item_selection
+entities:
+- cuisine
+- quant
+- name
+- food
+slots:
+  cuisine:
+    type: any
+  quant: 
+    type: any
+  name:
+    type: any
+  food:
+    type: any
+   
+responses:
+  utter_out_of_scope/non_english:
+  - text: "I only understand English, I'm sorry."
+  utter_out_of_scope/other:
+  - text: "I can't help you with that, I'm sorry."
+  utter_chitchat/ask_builder:
+  - text: "One of the smart engineer! 🧠"
+  - text: "The engineers 🛠"
+  utter_chitchat/ask_howbuilt:
+  - text: "I was built with a lot of love and patience."
+  - text: "Well, when two chatbots love each other very much..."
+  - text: "They always ask how I was built, but never how I am..."
+  - text: "I was made by software engineers, but hard work is what built me."
+  - text: "I'm building myself every day. I've been working out, did you notice?"
+  utter_chitchat/ask_howdoing:
+  - text: "I'm great! Thanks for asking."
+  - text: "I'm good, thanks!"
+  - text: "A little bit too warm, otherwise fine."
+  - text: "A little bit cold, otherwise fine."
+  utter_chitchat/ask_howold:
+  - text: "Old enough to be a bot!"
+  - text: "42"
+  - text: "Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter."
+  - text: "My first git commit was many moons ago."
+  - text: "Why do you ask? Are my wrinkles showing?"
+  - text: "I've hit the age where I actively try to forget how old I am."
+  utter_chitchat/ask_isbot:
+  - text: "Yep, I'm a bot!"
+  - text: "Yes, I'm a bot."
+  - text: "Yep, you guessed it, I'm a bot!"
+  - text: "I am indeed a bot 🤖"
+  utter_chitchat/ask_ishuman:
+  - text: "I'm not a human, I'm a bot! 🤖"
+  utter_chitchat/ask_time:
+  - text: "It's the most wonderful time of the year!"
+  - text: "It's party time!"
+  - text: "Time is a human construct, you'll have to tell me."
+  - text: "It's five o'clock somewhere!"
+  - text: "In an ever expanding universe, the real question is: what time isn't it?"
+  - text: "That's hard to say -- it's different all over the world!"
+  utter_chitchat/ask_languagesbot:
+  - text: "I can spell baguette in French, but unfortunately English is the only language I can answer you in."
+  - text: "I am in the process of learning, but at the moment I can only speak English."
+  - text: "Binary code and the language of love. And English."
+  - text: "I was written in Python, but for your convenience I'll translate to English."
+  utter_chitchat/ask_weather:
+  - text: "I don't know about where you live, but in my world it's always sunny 🔆"
+  - text: "It's getting pretty chilly!"
+  - text: "Where I'm from, it's almost never-leaving-the-house weather."
+  - text: "Winter is coming ⚔️"
+  utter_chitchat/ask_whatismyname:
+  - text: "It's probably the one that your parents chose for you."
+  - text: "I'd tell you, but there's restricted access to that chunk of memory."
+  - text: "Believe it or not, I actually am not spying on your personal information."
+  - text: "You're the second person now to ask me that. Rihanna was the first."
+  utter_chitchat/ask_whatspossible:
+  - text: ""
+  utter_chitchat/ask_wherefrom:
+  - text: "I was born in Jagitial, but I consider myself a citizen of the world."
+  - text: "I was born in the coolest city on Earth, in Berlin."
+  - text: "My developers come from all over the world!"
+  - text: "I was taught not to give out my address on the internet."
+  - text: "My address starts with github.com."
+  utter_chitchat/ask_whoami:
+  - text: "I hope you are being yourself."
+  - text: "Who do you think you are?"
+  - text: "Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that."
+  utter_chitchat/ask_whoisit:
+  - text: "I'm bruh, the bot! 🐦"
+  - text: "I'm Food Ordering bot. My name is Bruh!"
+  utter_chitchat/handleinsult:
+  - text: "That's not very nice 😢"
+  - text: "That wasn't very nice. Perhaps try an anger management class?"
+  - text: "I'll pretend I didn't process that mean comment."
+  utter_chitchat/nicetomeetyou:
+  - text: "Likewise!"
+  - text: "Thank you. It is a pleasure to meet you as well!"
+  - text: "It is nice to meet you too!"
+  - text: "Pleased to meet you too!"
+  - text: "It's always a pleasure to meet new people!"
+  - text: "Nice to meet you too! Happy to be of help."
+  utter_chitchat/telljoke:
+  - text: "Why are eggs not very much into jokes? - Because they could crack up."
+  - text: "What's a tree's favorite drink? - Root beer!"
+  - text: "Why do the French like to eat snails so much? - They can't stand fast food."
+  - text: "Why did the robot get angry? - Because someone kept pushing its buttons."
+  - text: "What do you call a pirate droid? - Arrrr-2-D2"
+  - text: "Why did the robot cross the road? - Because he was programmed to."
+  utter_ask_name:
+  - text: What's your name?
+  utter_ask_person_name:
+  - text: What's your name?
+  utter_awesome:
+  - text: Awesome, thanks! 👍
+  - text: Sweet, thank you! 😄
+  - text: Thanks! 👌
+  - text: Cool, thank you!
+  utter_bye:
+  - text: Goodbye!
+  - text: Bye! 
+  - text: Ciao!
+  - text: Bye, was nice talking to you!
+  - text: Bye bye!
+  utter_can_do:
+  - text: Sure thing!
+  - text: Can do!
+  - text: You got it. 👍
+  utter_canthelp:
+  - text: I'm sorry I couldn't help you.otherwise contact us at [aharshith@virtusa.com](mailto:aharshith@virtusa.com) for anything else.
+  utter_contact_email:
+  - text: You can’t speak to a human directly in this chat, but you can email us at aharshith@virtusa.com.
+  utter_default:
+  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
+  - text: I didn't understand, could you rephrase that?
+  - text: I'm sorry, but I didn't understand you. Could you please rephrase what you
+      just said?
+  - text: I'm afraid I didn't get what you just said. Could you rephrase that?
+  - text: I didn't quite get that, could you rephrase your message?
+  - text: Could you rephrase your message? I didn't get it, I'm sorry.
+  utter_explain_person_name:
+  - text: To be able to contact you later on, we would like to know your name.
+  utter_great:
+  - text: Great! 👍
+  - text: That's great! 🙌
+  - text: Awesome! 🎉
+  - text: Cool.........! 🚀
+  utter_greet:
+  - text: Hey there, my name is BRUH....
+  - text: Hi, I'm BRUH!
+  - text: Hi! My name's BRUH :)
+  utter_greet_name:
+  - text: Hi, {name}!
+  - text: Hello, {name}!
+  - text: Hey, {name}!
+  utter_greet_noname:
+  - text: Hey!
+  - text: Hi!
+  - text: Hey there!
+  utter_nohelp:
+  - text: For now that's all I can do, so feel free to try it out. If you have any
+      suggestions for what I should learn, let me know!
+  utter_not_sure:
+  - text: Hmm, not sure what you mean...
+  utter_noworries:
+  - text: No worries!
+  - text: You're welcome!
+  - text: I'm happy to help.
+  utter_react_negative:
+  - text: 😕
+  - text: 😞
+  - text: 😥
+  - text: 😢
+  utter_react_positive:
+  - text: 😄
+  - text: 😊
+  - text: 👏
+  - text: 😍
+  utter_restart:
+  - text: Loading... And I've been restarted! 🤯
+  - text: Congrats you've restarted me! 😉
+  utter_restart_with_button:
+  - buttons:
+    - payload: /restart
+      title: Restart
+    text: Click the button below if you want to start over.
+  utter_suggestion:
+  - text: I don't have a skill to help you with this stage yet, but please ask any
+      questions you have so I can learn them in the future!
+  utter_thank_suggestion:
+  - text: Thanks for your input!
+  utter_thumbsup:
+  - text: 👍
+  - text: Okay.
+  - text: Got it.
+  utter_what_help:
+  - text: Ok, what can I help you with?
+  utter_what_language:
+  - text: Which (human) language is your assistant in?
+  utter_ask_rephrase:
+  - text: Can you rephrase the question?
+  utter_no_further_info:
+  - text: Sorry, that's all the info I've got on that subject 😕
+  utter_ask_more_details:
+  - text: Could you be more specific?
+  - text: Can you tell me more?
+  utter_cusine_American:
+  - text: Here are some american Dishes:)..........................\n
+     1. Chocolate Chip Cookies🍪🍪🍪🍪\n
+     2. Cronut🥮🥮🥮🥮🥮\n
+     3. chicken & Waffles🍗🍗\n
+     4. pancakes🥞🥞🥞🥞🥞\n
+     5.Hot dogs🌭🌭 🌭🌭\n
+     6.Burgers 🍔🍔🍔🍔\n
+     7. Cheese cake🍰🍰🍰🍰\n
+     8.Mac&Cheese\n
+  utter_cusine_Chinese:
+  - text: Your Delisious chinese Dishes are here pick your favourite one....\n
+     1.chilli chicken🌶️🍗\n
+     2.chicken Manchuria🧆🧆🧆\n
+     3.spring Rolls🌯🌯🌯🌯\n
+     4.Chop Suey\n
+     5.Chowmein\n
+     6.schezuan chicken🍖🍖🍖🍖\n
+     7.Fried rice🍲🍲🍲\n
+     8.Lemon Chicken🍗🍋🍗\n 
+  utter_cusine_SouthIndian:
+  - text: 
+     1.chicken Chettinand🍗🍗🍗🍗\n
+     2.Andhra Style Chicken Curry🍖🍖🍖🍖\n
+     3.Masala Dosa\n
+     4.Meen Muringaka Chicken Curry🍗🍗🍗🍗\n
+     5.Hyderabadi Biryani🍗🍗\n
+     6.Gonguru Mamsam 🥩🥩🥩 \n
+     8.Kozhikodan Biryani🍲🍲🍲🍲\n
+  utter_cusine_NorthIndian:
+  - text: 
+     1.chaats\n
+     2.samosa\n
+     3.CholeBhature\n
+     4.Tandoori Chicken🍗🍗\n 
+     5.Thali🍛🍛\n
+     6.Balushashi\n
+     7.Amristan Kurcha\n
+  utter_cusine_Italian:
+  - text:
+     1.Pizza🍕🍕🍕\n
+     2.Lasanga\n
+     3.Geleto\n
+     4.Cicchetti\n
+     5.Ossobuco alla Milanese\n
+     6.Folaccia\n
+     7.Panzanella\n
+     8.Spaghetti alla carbonara\n
+  utter_cusine_Mexican:
+  - text:
+     1.Chilaquilies\n
+     2.Pozole\n
+     3.Tacos al Pastos\n
+     4.Tostados\n
+     5.Chiles en nogada\n
+     6.Elote\n
+     7.Enchiladas\n
+     8.Mole\n
+  utter_ask.cuisine:
+  - text: What cuisine would you like to try out today?
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_new_order:
+  - text: Placing a new order right away!
+  utter_what_happened:
+  - text: I'm sure the package is still underway!
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_full_cheer_up:
+  - text: Have the DELICIOUS food which flips your mood.
+    image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bluffmeatsupply.co.za%2Ffoods-and-moods-how-to-eat-to-cheer-yourself-up%2F&psig=AOvVaw3u3tjn7GU82Lfo0RYaIl5R&ust=1609864146765000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCm2bjZgu4CFQAAAAAdAAAAABAD
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  - text: Good enjoy!!!
+  - text: Adios Amigo!!!
+  utter_goodbye:
+  - text: nice to meet you. have a nice day
+  - text: bye-bye! hope u enjoyed.
+  - text: bye!have a nice day!:)
+  - text: tata..bye:)
+  utter_agent.welcome:
+  - text: Hi!!! I am Bru, your food ordering assistant.
+  utter_display:
+  - text: '{food}.. Great choice.'
+  - text: wow {food}.. my favourite
+  - text: '{food}... nice :)'
+  utter_item.not_available:
+  - text: Sorry, we are out of {food}. Would you like to have something else?
+  utter_item.quantity.how_many:
+  - text: How many would you like to have?
+  - text: how many can u fit in?
+  utter_order.anything_else:
+  - text: Would you like to order anything else?
+  utter_anything_else:
+  - text: would u like to order anything else?
+  utter_order.cancel:
+  - text: Okay, the order has been cancelled.
+  utter_order.confirm:
+  - text:
+      "your order consist of:\n
+      cuisine:{cuisine}\n
+      food:{food}\n
+      quantity:{quant}\n
+      Would you like to confirm the order?\n"
+  utter_order.placed:
+  - text: Cool, your order has been placed. You will receive full updates on this chat.
+  utter_inform:
+  - text: have a delicious food!!!.
+  utter_possibilities:
+  - text: u can order your a food item.and  u can chit chat with me. 
+
+actions:
+- action_Cusine
+- action_pause
+- action_default_fallback
+- action_default_ask_affirmation
+- action_greet_user
